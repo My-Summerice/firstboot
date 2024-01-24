@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.firstboot.mapper.UserMapper">
+    <insert id="addUser">
+        insert into user (name, age, gender) values (#{user.name}, #{user.age}, #{user.gender})
+    </insert>
+    <insert id="register">
+        insert into user (name, password) values (#{name}, #{password})
+    </insert>
+    <update id="updateUser">
+        update user set name = #{user.name}, age = #{user.age}, gender = #{user.gender}
+        where id = #{user.id}
+    </update>
+    <delete id="delUser">
+        update user set is_del = 2 where id = #{id}
+    </delete>
+    <delete id="delUserForever">
+        delete from user where id = #{id}
+    </delete>
+    <select id="getUserList" resultType="org.example.firstboot.entity.User">
+        select * from user where is_del = 1 limit #{offset}, #{size}
+    </select>
+    <select id="findUserByName" resultType="org.example.firstboot.entity.User">
+        select * from user where name = #{name}
+    </select>
+    <select id="findUserById" resultType="org.example.firstboot.entity.User">
+        select * from user where id = #{id} and is_del = 1
+    </select>
+    <select id="login" resultType="org.example.firstboot.entity.User">
+        select * from user where name = #{name} and password = #{password} and is_del = 1
+    </select>
+</mapper>

@@ -1,0 +1,59 @@
+### 获取用户列表
+GET {{url}}/user/list?page=1&size=2
+
+### 添加用户
+POST {{url}}/user/add
+Content-Type: application/json
+
+{
+  "name": "112",
+  "age": 18
+}
+
+### 根据id查找用户
+GET {{url}}/user/id?id=1
+
+### 更新用户
+POST {{url}}/user/update
+Content-Type: application/json
+
+{
+  "id": 26,
+  "name": "foo",
+  "age": 100,
+  "gender": 3
+}
+
+### 软删除用户
+POST {{url}}/user/del
+Content-Type: application/json
+
+{
+  "id": 26
+}
+
+### 硬删除用户（永久删除）
+POST {{url}}/user/del-forever
+Content-Type: application/json
+
+{
+  "id": 26
+}
+
+### 注册
+POST {{url}}/user/register
+Content-Type: application/json
+
+{
+  "name": "测试注册",
+  "password": "123456"
+}
+
+### 登录
+POST {{url}}/user/login
+Content-Type: application/json
+
+{
+  "name": "测试注册",
+  "password": "123456777777777777777777777777777777777777777"
+}

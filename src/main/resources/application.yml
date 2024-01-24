@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: dev
+  #    active: '@profileActive@'
+
+  jpa:
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: summerice
+    driver-class-name: com.mysql.cj.jdbc.Driver
+server:
+  port: 8080
+
+
+
+mybatis:
+  # mapper文件路径
+  mapper-locations: classpath:/mapper/*.xml
+
+logging:
+  # springboot会自动按天分割日志文件，且非当天的日志会自动压缩为.gz文件
+  file:
+    name: classpath:/log/my.log
