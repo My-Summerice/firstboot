@@ -22,6 +22,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User login(String name, String password) {
+        // TODO: 加上jwt校验
         return userMapper.login(name, password);
     }
 
@@ -46,6 +47,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User getUserByName(String name) {
+
+        return userMapper.findUserByName(name);
+    }
+
+    @Override
     public void updateUser(UserDTO userDTO) {
         userMapper.updateUser(convertToEntity(userDTO));
     }
@@ -58,6 +65,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delUserForever(long id) {
         userMapper.delUserForever(id);
+    }
+
+    @Override
+    public String getUserRole(long id) {
+
+        return userMapper.getUserRole(id);
     }
 
     /**

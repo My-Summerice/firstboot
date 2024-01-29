@@ -5,7 +5,7 @@ import lombok.Setter;
 import org.example.firstboot.core.result.ResultCode;
 
 /**
- * 自定义异常类
+ * 业务自定义异常类
  */
 @Setter
 @Getter

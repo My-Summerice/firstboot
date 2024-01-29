@@ -23,4 +23,6 @@ public interface UserMapper {
     void delUser(@Param("id") long id);
 
     void delUserForever(@Param("id") long id);
+
+    String getUserRole(@Param("id") long id);
 }

@@ -10,6 +10,12 @@ spring:
     username: root
     password: summerice
     driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: localhost
+    port: 6379
+    password: # redis 密码
+    database: 1
+    timeout: 3000
 server:
   port: 8080
 
@@ -23,3 +29,9 @@ logging:
   # springboot会自动按天分割日志文件，且非当天的日志会自动压缩为.gz文件
   file:
     name: classpath:/log/my.log
+
+auth:
+  jwt:
+    header: Authorization
+    expire: 604800 # 7天，s为单位
+    secret: abcdefghabcdefghabcdefghabcdefgh

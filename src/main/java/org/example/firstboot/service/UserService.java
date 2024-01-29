@@ -16,9 +16,13 @@ public interface UserService {
 
     User findUserById(long id);
 
+    User getUserByName(String name);
+
     void updateUser(UserDTO userDTO);
 
     void delUser(long id);
 
     void delUserForever(long id);
+
+    String getUserRole(long id);
 }

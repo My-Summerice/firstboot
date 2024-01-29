@@ -30,4 +30,9 @@
     <select id="login" resultType="org.example.firstboot.entity.User">
         select * from user where name = #{name} and password = #{password} and is_del = 1
     </select>
+    <select id="getUserRole" resultType="java.lang.String">
+        select user.role
+        from user
+        where id = #{id}
+    </select>
 </mapper>

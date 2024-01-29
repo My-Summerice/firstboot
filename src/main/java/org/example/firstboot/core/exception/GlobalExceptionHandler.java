@@ -32,8 +32,17 @@ public class GlobalExceptionHandler {
      * 处理参数校验异常
      */
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public GlobalResult<String> processValidationException(MethodArgumentNotValidException e) {
+    public GlobalResult<String> processValidationException() {
         return GlobalResult.error(ResultCode.BAD_REQUEST);
+    }
+
+    /**
+     * 处理验证码校验异常
+     */
+    @ExceptionHandler(CaptchaException.class)
+    public GlobalResult<String> processCaptchaException(CaptchaException e) {
+
+        return GlobalResult.error(e.getMessage());
     }
 
     /**
