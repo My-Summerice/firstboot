@@ -3,12 +3,12 @@ package org.example.firstboot.auth;
 import cn.hutool.json.JSONUtil;
 import org.example.firstboot.core.result.GlobalResult;
 import org.example.firstboot.util.JwtUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +22,7 @@ import java.nio.charset.StandardCharsets;
 @Component
 public class JWTLogoutSuccessHandler implements LogoutSuccessHandler {
 
-    @Autowired
+    @Resource
     JwtUtils jwtUtils;
 
     @Override

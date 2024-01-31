@@ -4,10 +4,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.example.firstboot.constant.Constant;
 import org.example.firstboot.core.exception.CaptchaException;
 import org.example.firstboot.util.RedisUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import javax.annotation.Resource;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -22,10 +22,10 @@ import java.io.IOException;
 @Component
 public class CaptchaFilter extends OncePerRequestFilter {
 
-    @Autowired
+    @Resource
     RedisUtils redisUtils;
 
-    @Autowired
+    @Resource
     LoginFailureHandler loginFailureHandler;
 
     @Override

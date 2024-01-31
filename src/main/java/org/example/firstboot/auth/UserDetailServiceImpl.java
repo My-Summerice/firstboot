@@ -2,7 +2,6 @@ package org.example.firstboot.auth;
 
 import org.example.firstboot.entity.User;
 import org.example.firstboot.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 
@@ -19,7 +19,7 @@ import java.util.List;
 @Service
 public class UserDetailServiceImpl implements UserDetailsService {
 
-    @Autowired
+    @Resource
     UserService userService;
 
     @Override
