@@ -15,6 +15,7 @@ class FirstbootApplicationTests {
     void contextLoads() {
 
         redisTemplate.opsForValue().set("name", "张三");
+
     }
 
 }

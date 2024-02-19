@@ -34,7 +34,6 @@ public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
     @Resource
     UserService userService;
 
-    // TODO: bug 报错提示重复定义 AuthenticationManager，该类和配置类冲突
     public JwtAuthenticationFilter(AuthenticationManager authenticationManager) {
 
         super(authenticationManager);

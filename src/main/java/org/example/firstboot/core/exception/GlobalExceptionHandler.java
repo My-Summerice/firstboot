@@ -45,12 +45,14 @@ public class GlobalExceptionHandler {
         return GlobalResult.error(e.getMessage());
     }
 
-    /**
-     * 处理其它异常
-     */
-    @ExceptionHandler(Exception.class)
-    public GlobalResult<String> processOtherException(Exception e) {
-        log.error(e.getMessage());
-        return GlobalResult.error(ResultCode.INTERNAL_SERVER_ERROR);
-    }
+    // 这个没有意义，因为只有直接或间接的继承了 RuntimeException 运行时异常的时候才会被全局异常捕获捕获到
+    // 而 Exception 是 RuntimeException 的父类，所以程序在编译阶段无法确认该 Exception 是否为运行时异常而报错。
+    //    /**
+    //     * 处理其它异常
+    //     */
+    //    @ExceptionHandler(Exception.class)
+    //    public GlobalResult<String> processOtherException(Exception e) {
+    //        log.error(e.getMessage());
+    //        return GlobalResult.error(ResultCode.INTERNAL_SERVER_ERROR);
+    //    }
 }

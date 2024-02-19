@@ -1,0 +1,8 @@
+### A
+GET {{url}}/aop/func-a
+
+### B
+GET {{url}}/aop/func-b
+
+### C
+GET {{url}}/aop/func-c

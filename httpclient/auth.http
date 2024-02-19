@@ -3,3 +3,6 @@ GET {{url}}/auth/captcha/image
 
 ### 获取字符串验证码
 GET {{url}}/auth/captcha/text
+
+### 登录
+POST {{url}}/auth/login
